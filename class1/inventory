@@ -1,0 +1,10 @@
+[cisco_ios]
+amsterdam-r1		ansible_host=172.16.80.31
+amsterdam-spine1	ansible_host=172.16.80.32
+amsterdam-spine2	ansible_host=172.16.80.33
+amsterdam-leaf1		ansible_host=172.16.80.34
+amsterdam-leaf2		ansible_host=172.16.80.35
+amsterdam-leaf3		ansible_host=172.16.80.36
+
+[cisco_nxos]
+amsterdam-backb1	ansible_host=172.16.80.37
