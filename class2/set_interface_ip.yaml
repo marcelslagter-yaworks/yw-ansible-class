@@ -1,0 +1,18 @@
+---
+- name: Set ip address on interface
+  hosts: amsterdam-spine1
+  tasks:
+    - name: Set ip address on amsterdam-spine1
+      ios_config:
+        lines:
+          - description To amsterdam_leaf3 - GigabitEthernet0/0 - 172.20.30.9/31
+          - 'ip address {{ intf_uplink_to_amsterdam_leaf3_ip }} {{ intf_uplink_to_amsterdam_leaf3_subnet }}'
+        parents: 'interface {{ intf_uplink_to_amsterdam_leaf3_intf }}'
+        match: exact
+    - name: Enable interfaces
+      ios_interface:
+        name: '{{ intf_uplink_to_amsterdam_leaf3_intf }}'
+        enabled: True
+        state: present
+      with_items: '{{ intf_uplink_to_amsterdam_leaf3_intf }}'
+      when: "intf_uplink_to_amsterdam_leaf3_intf is defined"

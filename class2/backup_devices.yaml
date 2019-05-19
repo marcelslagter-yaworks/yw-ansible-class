@@ -1,0 +1,4 @@
+---
+- name: Backup device configuration
+  hosts: amsterdam
+  gather_facts: false
