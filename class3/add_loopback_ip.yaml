@@ -1,0 +1,15 @@
+---
+
+- name: add loopback ip
+  hosts: amsterdam-spine1
+  gather_facts: false
+
+
+  tasks:
+    - name: set ip address
+      ios_config:
+        parents: Interface Loopback1007
+        lines:
+          - 'ip address {{ intf_loopback1007_ip_address }} {{ intf_loopback1007_subnet }}' 
+
+

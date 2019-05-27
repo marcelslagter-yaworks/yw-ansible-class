@@ -1,0 +1,8 @@
+---
+intf_uplink_to_amsterdam_leaf3_intf: GigabitEthernet0/3
+intf_uplink_to_amsterdam_leaf3_ip: 172.20.30.8
+intf_uplink_to_amsterdam_leaf3_subnet: 255.255.255.254
+
+intf_loopback1007: Loopback1007
+intf_loopback1007_ip_address: 192.168.14.7
+intf_loopback1007_subnet: 255.255.255.255

@@ -1,0 +1,19 @@
+---
+
+- name: set snmp config
+  hosts: [amsterdam] 
+  gather_facts: false
+
+  tasks:
+    - name: set snmp community
+      ios_config:
+        lines:
+          - 'snmp-server community {{ snmpserver_community }} RW'
+          - 'snmp-server trap-source {{ snmpserver_source_interface }}' 
+    - name: set multiple snmp hosts
+      ios_config:
+        lines:
+          - 'snmp-server host {{ item }} {{ snmpserver_community }}'
+      loop: '{{ snmpserver_host_ips }}'
+
+
